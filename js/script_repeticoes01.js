@@ -1,46 +1,67 @@
-//  controlando for
+// Divisíveis por 7 entre 1 e 1000
 
-const inputFrase = document.querySelector('#numero')
-const inputNumRepeticao = document.querySelector('#num-repeticao')
-const btnFrase = document.querySelector ('#btn-frase')
-const divFrase = document.querySelector ('#div-frase')
+const divCalculo = document.querySelector('#div-calculo');
 
-btnFrase.addEventListener('click', (evt)=>{
-    
-    let contador = 0;
+let quantidade = 0;
 
-    for ( contador = 0; contador < 1000; contador ++ ){
-    
-    if ( i % 7 === 0)
-
-    
-
-    divFrase.innerHTML = ''
-    
-
-        divFrase.innerHTML += ` ${contador} <br>`
+for (let i = 1; i <= 1000; i++) {
+    if (i % 7 === 0) {
+        quantidade++;
     }
-
-})
-
-//coleção de dados - array
-const  presentes = [ ' bicicleta', 'celular', 'camisa do mengão', 'doleira',
-'tênis adidas']
-const divArray = document.querySelector('#div-array')
-
-for(i = 0; i < 5; i++ )
-    divArray.innerHTML = `${presentes}` 
-// for in 
-const divForIn = document.querySelector('#div-forin')
-    
-for(let posicao in presentes){
-    divForIn.innerHTML += `${presentes[posicao]} <br>`
-
 }
-//for of
-const divForOf = document.querySelector('#div-forof')
 
-for(let elemento of presentes){
-divForOf.innerHTML += `${elemento}<br>`
+divCalculo.innerHTML =
+    `Existem ${quantidade} números divisíveis por 7 entre 1 e 1000.`;
 
+// Coleção de dados - array
+
+const presentes = [
+    'bicicleta', 'celular', 'camisa do mengão', 'doleira', 'tênis adidas'
+];
+
+// Lendo array com for tradicional
+
+const divArray = document.querySelector('#div-array');
+
+for (let i = 0; i < presentes.length; i++) {
+    divArray.innerHTML += `${presentes[i]} <br>`;
+}
+
+// For in
+
+const divForIn = document.querySelector('#div-forin');
+
+for (let posicao in presentes) {
+    divForIn.innerHTML += `${posicao} - ${presentes[posicao]} <br>`;
+}
+
+// For of
+
+const divForOf = document.querySelector('#div-forof');
+
+for (let elemento of presentes) {
+    divForOf.innerHTML += `${elemento} <br>`;
+}
+
+// Foreach
+
+const divForeach = document.querySelector('#div-foreach');
+
+presentes.forEach((elemento, posicao) => {
+    divForeach.innerHTML += `${posicao + 1} - ${elemento} <br>`;
+});
+//coleção de objetos literais
+const pessoas = [
+    {nome: 'Miguel Luiz', idade: 25, renda:850},
+    {nome: 'Guilerme', idade: 22, renda: 10000}, 
+    {nome: 'Kaua Luiz', idade: 19, renda: 4000},
+    {nome: 'Gleidson pink', idade: 20, renda: 4500},
+    {nome: 'Bob Jonatas', idade: 21, renda: 2500}
+]
+// listando objeto literal
+const divListaObjFor = document.querySelector('#div-listaobj-for')
+
+for(i = 0; i <pessoas.length;i++){
+    divListaObjFor.innerHTML += `${pessoas[i].nome}, ${pessoas[i].idade} 
+    R$ ${pessoas[i].renda.toFixed(2).replace('.',',')}<br>`
 }
