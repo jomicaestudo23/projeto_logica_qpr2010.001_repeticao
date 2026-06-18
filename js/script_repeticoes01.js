@@ -62,6 +62,37 @@ const pessoas = [
 const divListaObjFor = document.querySelector('#div-listaobj-for')
 
 for(i = 0; i <pessoas.length;i++){
-    divListaObjFor.innerHTML += `${pessoas[i].nome}, ${pessoas[i].idade} 
+    divListaObjFor.innerHTML += `${pessoas[i].nome}, 
+    ${pessoas[i].idade} 
     R$ ${pessoas[i].renda.toFixed(2).replace('.',',')}<br>`
 }
+// Lista obj pelo for in
+
+const divListaObjForIn = document.querySelector('#div-listaobj-forin')
+
+for(let indice in pessoas){
+    divListaObjForIn.innerHTML += `${indice} - ${pessoas[indice].nome}, 
+    ${pessoas[indice].idade}, 
+    R$ ${pessoas[indice].renda.toFixed(2).replace('.',',')}<br>`
+
+}
+// Lista obj pelo for of
+const divListaForOf = document.querySelector('#div-listaobj-forof')
+
+    let contForOf = 0
+
+    for(let elem of pessoas){
+        contForOf++
+
+        divListaForOf.innerHTML += 
+        `${contForOf} - ${elem.nome}, ${elem.idade}, 
+        ${elem.renda.toFixed(2).replace('.',',')}<br>`
+    }
+// Lista obj pelo foreach
+const divListaForeach = document.querySelector('#div-lista-foreach')
+
+pessoas.forEach((elem, i)=>{
+    divListaForeach.innerHTML +=
+    `${i + 1} - ${elem.nome}, 
+    ${elem.idade}, R$ ${elem.renda.toFixed(2).replace('.',',')}<br>`
+})
