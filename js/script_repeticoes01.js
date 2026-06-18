@@ -58,6 +58,34 @@ const pessoas = [
     {nome: 'Gleidson pink', idade: 20, renda: 4500},
     {nome: 'Bob Jonatas', idade: 21, renda: 2500}
 ]
+// manipulando array
+
+// adicionar elementos no array
+pessoas.push({nome: 'Monogólia', idade : 18 , renda : 2900})
+pessoas.unshift({nome: 'Joerdison', idade: 30, renda: 1610})
+// splice adiciona em uma posição  e nesse exemplo exclui mais dois elementos informados
+
+pessoas.splice(3,2,{nome: 'Glauber', idade: 90, renda: 9000})
+
+//splice adiciona em uma posição sem exluir elementos
+
+pessoas.splice(3,0,{nome: 'Glauber', idade: 90, renda: 9000})
+
+//splice exclui uma posição  e nesse exemplo exclui apenas o elemento informado
+
+pessoas.splice(1,0)
+
+// splice exclui duas posições a partir da posição informado
+
+pessoas.splice(2,2)
+
+// exclui o último elemento
+pessoas.pop()
+
+// exibir a quantidade de elementos em um array
+
+console.log('TOTAL DE ELEMENTOS NO ARRAY pessoas ---->', pessoas.length)
+
 // listando objeto literal
 const divListaObjFor = document.querySelector('#div-listaobj-for')
 

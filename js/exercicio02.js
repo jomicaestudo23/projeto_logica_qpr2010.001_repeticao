@@ -54,3 +54,9 @@ for (let i = 1; i <= 1000; i++) {
 
 divCalculo.innerHTML =
     `Existem ${quantidade} números divisíveis por 7 entre 1 e 1000.`;
+// ATIVIDADE 2
+const digNum = document.querySelector('#num-calc')
+const btnCalc = document.querySelector('#btn-calculo')
+const divCalc = document.querySelector('#div-divisores')
+
+
